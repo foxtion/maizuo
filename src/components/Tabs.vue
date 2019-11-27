@@ -7,13 +7,13 @@
       </router-link>
     </li>
     <li>
-      <router-link to="/odds">
+      <router-link to="/cinema">
         <i></i>
         <span>影院</span>
       </router-link>
     </li>
     <li>
-      <router-link to="/cinema">
+      <router-link to="/odds">
         <i></i>
         <span>优惠</span>
       </router-link>
