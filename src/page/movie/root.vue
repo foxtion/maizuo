@@ -1,17 +1,17 @@
 <template>
   <div id="movie">
-    <app-scroll style="width:100%;height:100%">
-      <banner/>
+    <appscroll style="width:100%;height:100%">
+       <Banner></Banner>
       <nav>
         <li v-for="(item,index) in List" :key="item.id" @click="newAction(index)">
           <span :class="{active:selectIndex===index}">{{item.name}}</span>
         </li>
       </nav>
       <keep-alive>
-        <nav_left v-if="selectIndex===0"></nav_left>
-        <nav_right v-else></nav_right>
+        <NavLeft v-if="selectIndex===0"></NavLeft>
+        <NavRight v-else></NavRight>
       </keep-alive>
-    </app-scroll>
+    </appscroll>
   </div>
 </template>
 
@@ -20,12 +20,15 @@ import BetterScroll from 'better-scroll'
 import Banner from "./children/banner";
 import NavLeft from "./children/nav_left";
 import NavRight from "./children/nav_right";
+import appscroll from '../../components/Scroll'
 export default {
   name: "movie",
   components: {
-    [Banner.name]: Banner,
-    [NavLeft.name]: NavLeft,
-    [NavRight.name]: NavRight
+    BetterScroll,
+    Banner,
+    NavLeft,
+    NavRight,
+    appscroll
   },
   data() {
     return {
@@ -36,6 +39,7 @@ export default {
   methods: {
     newAction(index) {
       this.selectIndex = index;
+      this.voicePrompt('created i love you a b c d');
     }
   }
 };

@@ -6,7 +6,11 @@
 
 <script>
 export default {
-    name:"cinema"
+    name:"cinema",
+    created(){
+        
+    }
+    
 }
 </script>
 
